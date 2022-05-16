@@ -1,0 +1,77 @@
+@charset "utf-8";
+/* main.css : 인덱스만의 스타일 */
+.headerwrap{position: fixed;top: 0;left: 0;width: 100%;background: #fff;padding: 0 70px;z-index: 90;}
+
+#fullpage section{background: no-repeat 50% 0;background-size: cover;text-align: center;}
+/* background-size : css3.0, ie9+
+1) cover : 빈칸이 보여지지 않도록 확대
+2) contain : 빈칸이 보여도 된다, 단) 원본이미지가 잘려지지 않아야 함
+3) px : 300px 200px => 이미지 기준으로 이미지의 가로가 300픽셀 세로가 200픽셀이 되도록 함
+        300px auto => 가로를 300으로 고정하고 세로는 비율을 자동으로 조절
+4) % : 50% 10% => 요소(태그) 기준으로 요소의 가로크기의 50%, 세로크기의 10% 크기로 배경을 처리
+*/
+#fullpage #cnt1{background-image: url(../images/main/title_bg01.jpg);}
+#fullpage #cnt2{background-image: url(../images/main/title_bg02.jpg);}
+
+.cnt{display: inline-block;color: #ffffff;}
+.cnt h2{padding-bottom: 13px;margin-bottom: 17px;border-bottom: 1px solid rgba(255,255,255,.8);}
+
+
+.cnt p{font-size: 44px;letter-spacing: -3px;}
+.cnt strong, .cnt > span{display: block;}
+.cnt strong{padding: 10px 0;font-size: 60px;letter-spacing: -3px;}
+.cnt > span{letter-spacing: -0.8px;line-height: 26px;padding-top: 32px;}
+.cnt .btn{display: inline-block;margin-top: 55px;}
+/* btn이 부모인 cnt의 가로 크기를 모두 차지하지 않고 작아질 수 있도록 */
+
+.cnt .btn a{position: relative;display: table;float: left;width: 180px;height: 180px;border: 6px solid #fff;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;margin: 0 5px;-webkit-transition: background 0.5s, border-color 0.5;-moz-transition: background 0.5s, border-color 0.5;-o-transition: background 0.5s, border-color 0.5;transition: background 0.5s, border-color 0.5;}
+.cnt .btn a.h48{height: 48px;}
+.cnt .btn a:hover, .cnt .btn a:focus{background: #f15b47;border-color: #f15b47;}
+.cnt .btn a span{display: table-cell;vertical-align: middle;}
+/* <br>이 있는 여러줄 텍스트를 수직 가운데 위치시키기
+1) 부모에게 display: table;
+2) 수직 가운데 있으려는 나 자신 display: table-cell;vertical-align: middle; */
+
+.cnt .btn.effect a span, .cnt .btn.effect a:after{transition: all 0.5s;}
+.cnt .btn.effect a:hover span, .cnt .btn.effect a:focus span{padding-bottom: 50px;}
+.cnt .btn.effect a:after{content: "";position: absolute;bottom: 70px;left: 50%;margin-left: -12px;width: 24px;height: 24px;background: url("../images/main/icon_plus.png") no-repeat;opacity: 0;}
+.cnt .btn.effect a:hover:after, .cnt .btn.effect a:focus:after{bottom: 40px;opacity: 1;}
+
+/* fullpage.css 파일에서 수정사항을 복사해서 변경함 */
+#fp-nav.fp-right{right: 100px;}
+#fp-nav ul li{margin: 14px;}
+#fp-nav ul li:last-child{display: none;} /* 푸터인디케이터 제거 */
+
+/* 원형 인디케이터 */
+#fp-nav ul li a span, .fp-slidesNav ul li a span{height: 5px;width: 5px;background: #fff;margin: -2.5px 0 0 -2.5px;}
+#fp-nav ul li a.active span, .fp-slidesNav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li:hover a.active span, #fp-nav ul li:hover a span, .fp-slidesNav ul li:hover a span{height: 5px;width: 5px;margin: -2px 0 0 -4px;border: 2px solid #f15b47;background: transparent;}
+
+/* 마우스 오버시 보여지는 툴팁글 */
+#fp-nav ul li .fp-tooltip{width: 126px;height: 21px;background: no-repeat right top;line-height: 100;}
+#fp-nav ul li:nth-child(1) .fp-tooltip{background-image: url(../images/main/nav_txt01.png);}
+#fp-nav ul li:nth-child(2) .fp-tooltip{background-image: url(../images/main/nav_txt02.png);}
+#fp-nav ul li a.active + .fp-tooltip{opacity: 1;}
+#fp-nav ul li:hover .fp-tooltip, #fp-nav.fp-show-active a.active + .fp-tooltip{width: 126px;}
+
+/* 본문 하단 애니메이션 */
+.arrow, .arrow:before, .arrow:after{position: absolute;left: 0;right: 0;margin: 0 auto;}
+.arrow{bottom: 50px;width: 30px;height: 42px;border: 1px solid #fff;border-radius: 20px;}
+.arrow:before, .arrow:after{content: "";width: 10px;height: 6px;background: url("../images/common/arrow_wheel.png") no-repeat center;}
+.arrow:before{top: 15px;-webkit-animation: arrow 1s 0.5s infinite;-moz-animation: arrow 1s 0.5s infinite;-o-animation: arrow 1s 0.5s infinite;animation: arrow 1s 0.5s infinite;}
+.arrow:after{top: 22px;-webkit-animation: arrow 1s infinite;-moz-animation: arrow 1s infinite;-o-animation: arrow 1s infinite;animation: arrow 1s infinite;}
+@-webkit-keyframes arrow{
+    0%{opacity: 0.5;}
+    100%{opacity: 1;}
+}
+@-moz-keyframes arrow{
+    0%{opacity: 0.5;}
+    100%{opacity: 1;}
+}
+@-o-keyframes arrow{
+    0%{opacity: 0.5;}
+    100%{opacity: 1;}
+}
+@keyframes arrow{
+    0%{opacity: 0.5;}
+    100%{opacity: 1;}
+}

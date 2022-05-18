@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>fullpage 오픈소스 사용</title>
+    <link rel="stylesheet" href="css/fullpage.css">
+    <link rel="stylesheet" href="css/test.css">
+    <!-- 스타일을 변경할 경우 반드시 fullpage.css를 먼저 선언하고 나만의 스타일을 뒤에 작성한다 (순서) -->
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/fullpage.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#fullpage').fullpage({
+                //내가 필요한 옵션을 추가함, 옵션명 대소문자 구분 - 스크립트 한줄 주석
+                sectionsColor: ['red', 'green', 'blue', 'gray'],  //각 영역의 배경색
+                navigation: true, //인디케이터를 보여지게
+                navigationPosition: 'right', //인디케이터 위치
+                navigationTooltips: ['본문1', '본문2', '본문3', '푸터'] //인디케이터에 마우스 오버시 보여질 텍스트, 접근성 향상
+            });
+        });
+    </script>
+</head>
+<body>
+     <!-- 
+        fullpage 오픈소스 사용
+        1) https://alvarotrigo.com/fullPage/ko/ 사이트 에서 download 버튼을 클릭하여 fullPage.js-master을 다운받는다
+        2) 압축을 풀고 dist폴더 내부에 fullpage.min.js와 fullpage.css 를 복사해서 작업폴더에 붙여넣기
+        3) html문서에 2개 파일을 연결
+        4) 마크업
+        <div id="fullpage"> 아이디명은 변경 가능, 클래스도 가능, 태그는 변경 가능
+            <div class="section">상세내용</div>상세본문은 반드시 .section을 사용
+            <div class="section">Some section</div>태그는 변경 가능
+            <div class="section">Some section</div>
+            <div class="section">Some section</div>
+        </div>
+        5) 스크립트 작성 - 제이쿼리로 작성
+        $(document).ready(function() {
+            $('#fullpage').fullpage({
+                //options here
+                autoScrolling:true,
+                scrollHorizontally: true
+            });
+        });
+     -->
+     <header id="header">상단헤더</header>
+     <div id="fullpage">
+         <!-- 자동완성에서 태그 사이의 텍스트 컨텐츠는 {} 내부에 작성
+        section.section{본문$}*3 -->
+         <section class="section cnt1">본문1</section>
+         <section class="section cnt2">본문2</section>
+         <section class="section cnt3">본문3</section>
+         <div class="section fp-auto-height">
+             <footer id="footer">
+                 브라우저 높이를 사용하지 않고 원하는 작은 사이즈의 높이를 가지려면 .section.fp-auto-height 클래스명 2개를 필요로 함 - 스타일에서 높이 반드시 지정
+             </footer>
+         </div>
+     </div>
+</body>
+</html>

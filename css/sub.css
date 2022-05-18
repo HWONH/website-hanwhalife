@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* 모든 서브 공통 스타일 */
+.sub_bg{height: 260px;color: #ffffff;background: no-repeat center;background-size: cover;}
+.sub_bg.about{background-image: url(../images/about/tit_head_bg.jpg);}
+.sub_bg h2{padding: 77px 0 24px;font-size: 56px;letter-spacing: -1px;font-weight: 300;}
+.sub_bg p{letter-spacing: 0.75px;}
+
+.sub_tit{height: 90px;border-bottom: 1px solid #aaa;margin-bottom: 67px;}
+.sub_tit h3{text-align: center;font-size: 34px;letter-spacing: -1.9px;color: #333333;line-height: 90px;font-weight: 200;}
+
+.sub_tit a{position: absolute;top: 20px;color: #999999;height: 50px;line-height: 50px;}
+.sub_tit .btn_l{left: 0;background: url("../images/common/tit_menu_prev.png") no-repeat 0 50%;padding-left: 65px;}
+.sub_tit .btn_r{right: 0;background: url("../images/common/tit_menu_next.png") no-repeat 99% 50%;padding-right: 65px;}
+.sub_tit a:hover, .sub_tit a:focus{color: #f15b47;}
+.sub_tit .btn_l:hover, .sub_tit .btn_l:focus{background-image: url("../images/common/tit_menu_prev_on.png");}
+.sub_tit .btn_r:hover, .sub_tit .btn_r:focus{background-image: url("../images/common/tit_menu_next_on.png");}
+
+/* 배너 */
+#banner{margin-top: 64px;}
+#banner ul{height: 220px;}
+#banner ul li{float: left;width: 50%;}
+#banner ul li a{display: block;height: 220px;}
+#banner ul li:nth-child(1) a{background: url("../images/common/aside01.jpg") no-repeat 100% 0;}
+#banner ul li:nth-child(2) a{background: url("../images/common/aside02.jpg") no-repeat;}
+
+/* 역할 및 서비스 스타일 */
+.life{height: 460px;margin-bottom: 72px;background: url("../images/about/service_intro_bg.jpg") no-repeat center;}
+.life div{top: 72px;left: 69px;width: 360px;height: 320px;padding: 35px 0 30px 30px;background: rgba(241, 91, 71, .9);color: #ffffff;}
+.life h4 span{display: inline-block;font-size: 30px;border-bottom: 2px solid #fff;line-height: 1;padding: 13px 0 8px;}
+.life div p{margin-top: 22px;line-height: 26px;}
+
+.sevice_box{padding: 70px 0 26px;border-top: 1px solid #aaa;}
+.sevice_box h4, .sevice_box ul, .sevice_box ul li{float: left;}
+.sevice_box h4{width: 400px;font-size: 30px;line-height: 42px;letter-spacing: -2px;color: #333333;}
+.sevice_box ul{width: calc(1180px - 400px);} /* calc함수, 연산자 앞뒤로 띄어쓰기에 주의하자 */
+.sevice_box ul li{box-sizing: border-box;}
+.sevice_box .txt_list li{position: relative;width: 50%;padding-left: 69px;padding-bottom: 40px;line-height: 24px;}
+.sevice_box .txt_list li span{position: absolute;top: 0;left: 0;font-size: 30px;font-weight: 400;color: #f15b47;line-height: 32px;}
+
+.sevice_box .img_list li{padding: 0 9px;}
+.sevice_box .img_list li img{width: 372px;height: auto;} /* html 문서 img 태그에 width와 height가 적혀 있으면 스타일에서도 width와 height 모두를 변경한다 */
+.sevice_box .img_list li figcaption{padding: 17px 0 58px;letter-spacing: -1px;}
